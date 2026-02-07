@@ -1,0 +1,23 @@
+$padding: 5px;
+
+.flower {
+  height: 50px;
+  position: absolute;
+  transition: transform 100ms ease;
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &.f-top {
+    top: $padding;
+  }
+  &.f-bottom {
+    bottom: $padding;
+  }
+  &.f-right {
+    right: $padding;
+  }
+  &.f-left {
+    left: $padding;
+  }
+}

@@ -1,0 +1,11 @@
+@mixin background-blur {
+  background-color: #d3d3d325;
+  backdrop-filter: blur(2px);
+  border-radius: 25px;
+  padding: 5px;
+  padding-inline: 10px;
+}
+
+.background-blur {
+  @include background-blur();
+}

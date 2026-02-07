@@ -1,0 +1,589 @@
+@use "background-blur.scss" as *;
+
+$highlight: hsl(168, 28%, 36%);
+$background: hsl(66, 68%, 94%);
+$cell-background: #83afa6;
+$slate: #58727f;
+$silver: #e5e5e5;
+$sand: #d3a284;
+$text-color: #28282b;
+$message-background: #f1f58f50;
+
+@import url("https://fonts.googleapis.com/css2?family=Barrio&family=Delius&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&display=swap");
+
+//Loveleen
+@import url("https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap");
+$loveleen: "Cedarville Cursive";
+
+//sapna
+@import url("https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap");
+$sapna: "Reenie Beanie";
+
+//mughda
+@font-face {
+  font-family: "Davys Crappy Writ";
+  src: url("/src/fonts/DavysCrappyWrit.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+$mughda: "Davys Crappy Writ";
+
+
+//Meenakshi
+@import url('https://fonts.googleapis.com/css2?family=Bilbo&display=swap');
+$meenakshi: "Bilbo";
+
+$text-font: "Delius", cursive;
+$header-font: "Barrio", cursive;
+$auyt: "Annie Use Your Telescope", cursive;
+
+//Sonali
+@import url('https://fonts.googleapis.com/css2?family=Bonheur+Royale&display=swap');
+$sonali: "Bonheur Royale";
+
+
+//Gitanjali
+@import url('https://fonts.googleapis.com/css2?family=Loved+by+the+King&display=swap');
+$gitanjali: "Loved by the King";
+
+
+//arya
+@import url('https://fonts.googleapis.com/css2?family=Iansui&display=swap');
+$arya: "Iansui";
+
+
+//neel
+@import url('https://fonts.googleapis.com/css2?family=Just+Me+Again+Down+Here&display=swap');
+$neel: "Just Me Again Down Here";
+
+//Swara
+@import url('https://fonts.googleapis.com/css2?family=Give+You+Glory&display=swap');
+$swara: "Give You Glory";
+
+//Mrunmayee
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+$mrunmayee: "Caveat";
+
+//Anwesha
+@import url('https://fonts.googleapis.com/css2?family=Swanky+and+Moo+Moo&display=swap');
+$anwesha: "Swanky and Moo Moo";
+
+//Mamai
+@import url('https://fonts.googleapis.com/css2?family=Gupter:wght@400;500;700&display=swap');
+$mamai: "Gupter";
+
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-family: $text-font;
+  color: $text-color;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  overscroll-behavior: none;
+  background-color: $background;
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+}
+
+$border-radius: 25px;
+
+#introduction {
+  margin-top: 8vh;
+  position: relative;
+  background-color: $cell-background;
+  min-height: 85vh;
+  width: 85vw;
+  border-radius: $border-radius;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  #title {
+    z-index: 5;
+    font-size: 66px;
+    font-family: $header-font;
+    text-align: center;
+    position: absolute;
+    top: 0;
+  }
+
+  #content {
+    width: 100%;
+    height: 100%;
+    #main {
+      margin-top: 10vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: 5px;
+
+      #name {
+          color: $highlight;
+          /* color: hsl( from $highlight 0 s l); */
+        font-size: clamp(120px, 15vw, 200px);
+        font-family: $header-font;
+        text-align: center;
+        z-index: 10;
+      }
+
+      #info {
+        margin-top: 5vh;
+        font-size: 32px;
+        z-index: 10;
+        font-weight: 600;
+      }
+    }
+
+    #verbs {
+      position: absolute;
+      top: 15vh;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      display: grid;
+      grid-template-rows: repeat(7, 1fr);
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+      place-items: center;
+      box-sizing: border-box;
+    }
+
+    .verb {
+      font-size: 45px;
+      color: #813e3e;
+      font-weight: 600;
+      opacity: 75%;
+      font-family: $auyt;
+      transition: transform 0.2s ease;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+#timeline {
+  margin-top: 25vh;
+  background-color: $cell-background;
+  width: 85vw;
+  border-radius: $border-radius;
+  position: relative;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 90px;
+
+  #timeline-line {
+    z-index: 1;
+    position: absolute;
+    top: 25px;
+    background-color: #493628;
+    left: 200px;
+    height: 100%;
+    width: 15px;
+  }
+
+  .timeline-row {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+
+    .timeline-image-container {
+      .timeline-image {
+        margin-right: auto;
+        object-fit: cover;
+        min-height: 500px;
+        min-width: 400px;
+        max-height: 700px;
+        max-width: 600px;
+        width: 100%;
+        height: 100%;
+        border-radius: $border-radius;
+      }
+    }
+
+    .timeline-text {
+      @include background-blur();
+      max-width: 50ch;
+      font-size: 32px;
+      margin: 2ch;
+      backdrop-filter: grayscale(30%);
+      border-radius: $border-radius;
+      padding: 25px;
+      text-align: center;
+      margin: auto;
+    }
+  }
+}
+
+//messages
+#messages {
+  z-index: 20;
+  margin-top: 25vh;
+  width: 85vw;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+
+
+  .message-container {
+    z-index: 20;
+    position: relative;
+    line-height: 1.1;
+    margin: 5px;
+    margin-inline: auto;
+    background-color: $message-background;
+    max-width: 90ch;
+    border-radius: 25px;
+    padding: 5px;
+    padding-inline: 10px;
+
+    .dear-ayush {
+      font-family: inherit;
+      font-size: 2em;
+    }
+  }
+  .message-row[data-row="1"], .message-row[data-row="2"] {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .message-row[data-row="3"] {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    align-items: center;
+    .message-row[data-row="4"]  {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+
+}
+
+.scratch-to-reveal {
+  position: absolute;
+}
+
+//Indivisual Letters
+#loveleen {
+  font-family: $loveleen;
+  background-color: #ffadad50 !important;
+  font-size: 38px;
+  font-weight: 500;
+  width: 50ch;
+  line-height: 1.1;
+  #loveleen-name {
+    text-align: right;
+    font-size: 46px;
+  }
+
+
+  .flower.f-right {
+    transform: translateX(150%);
+  }
+  .flower.f-left {
+    transform: translateX(-150%);
+  }
+}
+
+#sapna {
+  font-family: $sapna;
+  font-size: 48px;
+  width: 40ch;
+  background-color: #a8d5ba50 !important;
+  #name {
+    font-size: 75px;
+  }
+  #sapna-name {
+    text-align: right;
+  }
+}
+
+#meenakshi {
+  font-family: $meenakshi;
+  font-size: 46px;
+
+  #name {
+    font-size: 66px;
+  }
+
+
+  #line-1 {
+    margin-left: 8ch;
+  }
+  #meenakshi-name {
+    text-align: right;
+    margin-right: 5ch;
+    font-size: 52px;
+  }
+}
+
+
+#mughda {
+  font-family: $mughda;
+  font-size: 36px;
+  font-weight: 600;
+  width: 75ch;
+  background-color: #fae1dd !important;
+  #name {
+    font-size: 56px;
+  }
+  #line-1 {
+    margin-left: 12ch;
+  }
+  #line-2,
+  #line-3 {
+    margin-left: 4ch;
+  }
+
+  #line-5 {
+    margin-left: 8ch;
+  }
+  #line-6 {
+    margin-left: 12ch;
+  }
+  #mughda-name {
+    text-align: right;
+    margin-right: 10ch;
+  }
+}
+
+#sonali {
+  font-family: $sonali;
+  font-size: 44px;
+
+  background-color:  #b3dee250 !important;
+
+  #name {
+    font-size: 54px;
+  }
+
+  #line-2 {
+    margin-left: 3ch;
+  }
+  #line-3 {
+    text-align: center;
+  }
+
+  #from {
+    text-decoration: underline;
+    text-decoration-style: wavy;
+    text-decoration-thickness: 1.4px;
+    margin-right: 4ch;
+  }
+  #sonali-name {
+    margin-right: 4ch;
+    text-align: right;
+  }
+
+}
+
+
+
+#gitanjali {
+  font-family: $gitanjali;
+  font-size: 40px;
+  width: 55ch;
+  height: fit-content;
+  background-color: #ea9ab250 !important;
+
+  .flower.f-top{
+      transform: translateY(-130%);
+  }
+  .flower.f-bottom{
+      transform: translateY(130%);
+  }
+  * {
+  color: #002b59 ;
+
+  }
+
+  #line-1{
+    margin-left: 4ch;
+  }
+
+
+  #line-2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 2ch;
+
+
+
+    #name {
+      font-size: 48px;
+      margin-left: 2ch;
+    }
+
+
+    #green-skills{
+      text-align: center;
+      font-size: 32px;
+      width: 32ch;
+    }
+
+  }
+
+
+  #line-3 {
+    text-indent: 6ch;
+  }
+
+  #smiley {
+    text-align: right;
+    margin-right: 2ch;
+  }
+
+  #line-4 {
+    margin-top: 1ch;
+    text-indent: 4ch;
+  }
+  #line-8 {
+    margin-top: 1ch;
+    text-indent: 2ch;
+  }
+  #line-5, #line-6 {
+    margin-top: 1ch;
+    text-indent: 1ch;
+
+  }
+
+  #line-7 {
+    text-indent: 7ch;
+  }
+  #gitanjali-name {
+    text-align: right;
+    font-size: 44px;
+  }
+
+}
+
+#neel {
+  font-family: $neel;
+  font-size: 32px;
+  background-color: #87d3f850 !important;
+}
+
+#arya {
+  font-family: $arya;
+  font-size: 28px;
+  background-color: #81c6e850 !important;
+}
+
+#swara {
+  font-family: $swara;
+  font-size: 28px;
+  font-weight: 500;
+}
+#mrunmayee {
+  font-family: $mrunmayee;
+  font-size: 32px;
+  background-color: #a8d5ba50 !important;
+}
+
+#anwesha {
+  font-family: $anwesha;
+  font-size: 32px;
+
+  background-color: #ffedfd50 !important;
+
+  .flower.f-right{
+    transform: translateX(120%);
+  }
+  .flower.f-left{
+    transform: translateX(-120%);
+  }
+
+}
+#mamai {
+  font-family: $mamai;
+  font-size: 32px;
+  height: 100%;
+  background-color: #a8d5ba50 !important;
+}
+
+
+
+//
+.underlined {
+  text-decoration: underline;
+}
+
+.font-inherit {
+  font-family: inherit;
+}
+.font-size-1em {
+  font-size: 1em;
+}
+.font-size-2em {
+  font-size: 2em;
+}
+.font-size-3em {
+  font-size: 3em;
+}
+//
+
+
+#divij {
+  font-size: 16px;
+  text-align: center;
+  margin-top: 5vh;
+
+  #quote {
+    font-style: italic;
+  }
+}
+
+#buffer {
+  height: 15vh;
+}
+
+.box-shadow-1 {
+  box-shadow:
+    rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+.box-shadow-2 {
+  box-shadow:
+    rgba(9, 30, 66, 0.25) 0px 1px 1px,
+    rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+}
+
+
+
+.hidden {
+  display: none !important;
+}
